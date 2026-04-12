@@ -11,7 +11,7 @@ const NavBar = () => {
     const [hireOpen, setHireOpen] = useState(false);
 
     return (
-        <div className=" sticky top-0 z-50 shadow-sm">
+        <div className=" sticky top-0 z-50 bg-base-300 shadow-lg">
             <div className="container mx-auto text-gray-300">
 
                 {/* NAVBAR */}
@@ -69,7 +69,7 @@ const NavBar = () => {
 
                 {/* MOBILE MENU */}
                 {menuOpen && (
-                    <div className="md:hidden mt-2 pb-4">
+                    <div className="md:hidden mt-2 pl-8 pb-4">
                         <ul className="flex flex-col gap-4 font-medium">
                             <NavLinkActive href="/">Home</NavLinkActive>
                             <NavLinkActive href="/about">About</NavLinkActive>

@@ -4,6 +4,8 @@ import HeroImage from "../assets/image/hero.png";
 import Image from "next/image";
 import { FaGithub, FaReact, FaTwitter } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa6";
+import { IoLogoJavascript } from "react-icons/io";
+import { SiNextdotjs } from "react-icons/si";
 import { Typewriter } from "react-simple-typewriter";
 
 const Hero = () => {
@@ -57,9 +59,15 @@ const Hero = () => {
                             </h3>
 
                             <div className="flex gap-4 text-2xl text-gray-400">
-                                <FaGithub className="hover:text-white cursor-pointer transition" />
-                                <FaTwitter className="hover:text-sky-400 cursor-pointer transition" />
-                                <FaLinkedin className="hover:text-blue-500 cursor-pointer transition" />
+                                <a href="https://github.com/sumon-webs" target="blank">
+                                    <FaGithub className="hover:text-white cursor-pointer transition" />
+                                </a>
+                                <a href="https://x.com/sumon_ali1557" target="blank">
+                                    <FaTwitter className="hover:text-sky-400 cursor-pointer transition" />
+                                </a>
+                                <a href="https://www.linkedin.com/in/md-sumon-ali1557/" target="blank">
+                                    <FaLinkedin className="hover:text-blue-500 cursor-pointer transition" />
+                                </a>
                             </div>
                         </div>
 
@@ -71,8 +79,8 @@ const Hero = () => {
 
                             <div className="flex gap-4 text-2xl text-gray-400">
                                 <FaReact className="hover:text-cyan-400 transition" />
-                                <FaReact className="hover:text-cyan-400 transition" />
-                                <FaReact className="hover:text-cyan-400 transition" />
+                                <IoLogoJavascript className="hover:text-cyan-400 transition" />
+                                <SiNextdotjs className="hover:text-cyan-400 transition" />
                             </div>
                         </div>
 
