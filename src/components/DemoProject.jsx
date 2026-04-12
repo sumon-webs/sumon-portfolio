@@ -33,75 +33,89 @@ const DemoProject = () => {
     ];
 
     return (
-        <section className="py-16 px-4 container mx-auto border-b border-gray-700">
+        <section className="py-16 px-4 bg-base-200">
+            <div className="container mx-auto border-b border-gray-700 pb-16">
 
-            <h1 className="text-3xl md:text-4xl   font-bold text-white text-center mb-12">
-                My Demo Projects
-            </h1>
+                {/* TITLE */}
+                <h1 className="text-3xl md:text-5xl font-bold text-center mb-12">
+                    My Demo Projects
+                </h1>
 
-            {/* GRID */}
-            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                {/* GRID */}
+                <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
 
-                {projects.map((project, index) => (
-                    <div
-                        key={index}
-                        className="group bg-white/5 border border-white/10 backdrop-blur-md 
-            rounded-2xl p-6 relative overflow-hidden 
-            hover:shadow-xl hover:-translate-y-2 transition duration-300"
-                    >
+                    {projects.map((project, index) => (
+                        <div
+                            key={index}
+                            className="group bg-base-300 rounded-2xl p-6 relative overflow-hidden
+                            shadow-md hover:shadow-2xl hover:-translate-y-2
+                            transition duration-300 flex flex-col justify-between"
+                        >
 
-                        {/* Title */}
-                        <h2 className="text-white text-xl font-semibold mb-2">
-                            {project.title}
-                        </h2>
+                            {/* CONTENT */}
+                            <div>
 
-                        {/* Description */}
-                        <p className="text-gray-400 text-sm mb-4">
-                            {project.desc}
-                        </p>
+                                {/* TITLE */}
+                                <h2 className="text-lg md:text-xl font-semibold mb-2 group-hover:text-primary transition">
+                                    {project.title}
+                                </h2>
 
-                        {/* Tech stack */}
-                        <div className="flex flex-wrap gap-2 mb-6">
-                            {project.tech.map((t, i) => (
-                                <span
-                                    key={i}
-                                    className="text-xs px-2 py-1 rounded-full bg-white/10 text-gray-300"
-                                >
-                                    {t}
-                                </span>
-                            ))}
-                        </div>
+                                {/* DESCRIPTION */}
+                                <p className="text-sm text-base-content/70 mb-4">
+                                    {project.desc}
+                                </p>
 
-                        {/* Links */}
-                        <div className="flex items-center justify-between">
+                                {/* TECH STACK */}
+                                <div className="flex flex-wrap gap-2 mb-6">
+                                    {project.tech.map((t, i) => (
+                                        <span
+                                            key={i}
+                                            className="text-xs px-3 py-1 rounded-full bg-base-100 text-base-content/70"
+                                        >
+                                            {t}
+                                        </span>
+                                    ))}
+                                </div>
 
-                            <div className="flex gap-3">
-                                <a href={project.github} className="text-gray-300 hover:text-white">
-                                    <FaGithub />
-                                </a>
-
-                                <a href={project.live} className="text-gray-300 hover:text-white">
-                                    <FaExternalLinkAlt />
-                                </a>
                             </div>
 
-                            {/* View button */}
-                            <div className="flex items-center gap-2 cursor-pointer">
-                                <a href={project.live} >
-                                    <FaArrowRight className="text-white text-lg" />
-                                    <span className="text-sm text-white opacity-0 translate-x-2 
-                  group-hover:opacity-100 group-hover:translate-x-0 
-                  transition duration-300">
+                            {/* FOOTER */}
+                            <div className="flex items-center justify-between mt-auto">
+
+                                {/* LINKS */}
+                                <div className="flex gap-4 text-lg">
+                                    <a
+                                        href={project.github}
+                                        className="hover:text-primary transition"
+                                    >
+                                        <FaGithub />
+                                    </a>
+
+                                    <a
+                                        href={project.live}
+                                        className="hover:text-primary transition"
+                                    >
+                                        <FaExternalLinkAlt />
+                                    </a>
+                                </div>
+
+                                {/* VIEW BUTTON */}
+                                <a
+                                    href={project.live}
+                                    className="flex items-center gap-2 text-sm font-medium group"
+                                >
+                                    <span className="opacity-0 group-hover:opacity-100 transition">
                                         View
                                     </span>
+                                    <FaArrowRight className="group-hover:translate-x-1 transition" />
                                 </a>
+
                             </div>
 
                         </div>
+                    ))}
 
-                    </div>
-                ))}
-
+                </div>
             </div>
         </section>
     );

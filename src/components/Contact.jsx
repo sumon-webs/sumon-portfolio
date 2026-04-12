@@ -1,73 +1,93 @@
 import React from "react";
-import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
+import {
+    FaGithub,
+    FaLinkedin,
+    FaEnvelope,
+    FaPhone,
+    FaMapMarkerAlt,
+} from "react-icons/fa";
 
 const Contact = () => {
     return (
-        <section className="min-h-screen flex items-center px-4 py-12">
-            <div className="max-w-6xl mx-auto w-full">
+        <section className=" flex items-center  px-4 bg-base-200">
+            <div className="container mx-auto w-full border-b border-gray-700 pb-20">
 
                 {/* HEADER */}
-                <div className="text-center mb-10">
-                    <h2 className="text-4xl font-bold">Get In Touch</h2>
-                    <p className="text-base-content/70 mt-3 max-w-2xl mx-auto">
+                <div className="text-center mb-12">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold">
+                        Get In Touch
+                    </h2>
+
+                    <p className="text-base-content/70 mt-4 max-w-2xl mx-auto">
                         Have a project or idea? I’d love to hear from you.
-                        I’m available for freelance work, collaboration, or any frontend opportunities.
+                        I’m available for freelance work, collaboration, or frontend opportunities.
                     </p>
+
                     <p className="text-sm text-base-content/60 mt-2">
                         ⏱ Usually reply within 24 hours
                     </p>
                 </div>
 
-                {/* MAIN GRID */}
-                <div className="grid md:grid-cols-2 gap-10 bg-base-100 shadow-xl rounded-2xl p-8">
+                {/* CARD */}
+                <div className="grid md:grid-cols-2 gap-10 bg-base-100 rounded-2xl shadow-xl p-6 sm:p-10">
 
-                    {/* LEFT SIDE - INFO */}
-                    <div className="space-y-6">
+                    {/* LEFT SIDE */}
+                    <div className="space-y-8">
 
-                        <h3 className="text-2xl font-bold">Contact Information</h3>
+                        <div>
+                            <h3 className="text-2xl font-bold mb-6">
+                                Contact Information
+                            </h3>
 
-                        <div className="space-y-4 text-base-content/80">
+                            <div className="space-y-5 text-base-content/80">
 
-                            <div className="flex items-center gap-3">
-                                <FaEnvelope className="text-primary" />
-                                <span>example@email.com</span>
-                            </div>
+                                <div className="flex items-center gap-3">
+                                    <FaEnvelope className="text-primary" />
+                                    <span>sumon01333581557@gmail.com</span>
+                                </div>
 
-                            <div className="flex items-center gap-3">
-                                <FaPhone className="text-primary" />
-                                <span>+880 1XXX-XXXXXX</span>
-                            </div>
+                                <div className="flex items-center gap-3">
+                                    <FaPhone className="text-primary" />
+                                    <span>+880 01333581557</span>
+                                </div>
 
-                            <div className="flex items-center gap-3">
-                                <FaMapMarkerAlt className="text-primary" />
-                                <span>Kaliganj, Dhaka, Bangladesh</span>
+                                <div className="flex items-center gap-3">
+                                    <FaMapMarkerAlt className="text-primary" />
+                                    <span>Thakurgoan, Dhaka, Bangladesh</span>
+                                </div>
+
                             </div>
                         </div>
 
                         {/* SOCIAL */}
                         <div>
-                            <h4 className="font-semibold mb-2">Find me on</h4>
-                            <div className="flex gap-4 text-xl">
-                                <a href="#" className="hover:text-primary">
+                            <h4 className="font-semibold mb-3">Find me on</h4>
+
+                            <div className="flex gap-5 text-2xl text-base-content/70">
+                                <a className="hover:text-primary transition">
                                     <FaGithub />
                                 </a>
-                                <a href="#" className="hover:text-primary">
+
+                                <a className="hover:text-primary transition">
                                     <FaLinkedin />
                                 </a>
                             </div>
                         </div>
 
-                        {/* EXTRA CTA */}
-                        <div className="pt-4">
-                            <p className="text-sm text-base-content/70">
-                                Let’s turn your idea into reality 🚀
+                        {/* CTA */}
+                        <div className="pt-2">
+                            <p className="text-sm text-base-content/60">
+                                Let’s build something amazing together 🚀
                             </p>
                         </div>
                     </div>
 
-                    {/* RIGHT SIDE - FORM */}
+                    {/* RIGHT SIDE FORM */}
                     <div>
-                        <h3 className="text-2xl font-bold mb-5">Send Message</h3>
+
+                        <h3 className="text-2xl font-bold mb-6">
+                            Send Message
+                        </h3>
 
                         <form className="space-y-4">
 
@@ -95,10 +115,12 @@ const Contact = () => {
                                 className="textarea textarea-bordered w-full"
                             ></textarea>
 
-                            <button className="btn btn-primary w-full">
+                            <button className="btn btn-primary w-full hover:scale-[1.02] transition">
                                 Send Message
                             </button>
+
                         </form>
+
                     </div>
 
                 </div>

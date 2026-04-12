@@ -7,8 +7,8 @@ import 'react-tabs/style/react-tabs.css';
 
 const Resume = () => {
     return (
-        <section className=" lg:py-16 px-4 sm:px-6 lg:px-8">
-            <div className="container mx-auto">
+        <section className=" bg-base-200 ">
+            <div className="container mx-auto lg:py-16 px-4 sm:px-6 lg:px-8 border-b border-gray-700">
 
                 {/* HEADER */}
                 <div className="text-center mb-12">

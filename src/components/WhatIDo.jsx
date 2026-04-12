@@ -38,8 +38,8 @@ const services = [
 
 const WhatIDo = () => {
     return (
-        <section className="  py-16 px-4 sm:px-6 lg:px-8">
-            <div className="container mx-auto">
+        <section className=" bg-base-200  ">
+            <div className="container mx-auto border-b border-gray-700 py-16 px-4 sm:px-6 lg:px-8">
 
                 {/* HEADER */}
                 <div className="mb-12">
@@ -50,12 +50,12 @@ const WhatIDo = () => {
                 </div>
 
                 {/* GRID */}
-                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                <div className=" bg-base-400 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
 
                     {services.map((item, index) => (
                         <div
                             key={index}
-                            className="p-6 rounded-2xl bg-base-100 shadow-md 
+                            className="p-6 rounded-2xl bg-neutral text-neutral-content shadow-md 
                             hover:shadow-2xl hover:-translate-y-2 
                             transition duration-300 flex flex-col gap-4"
                         >
