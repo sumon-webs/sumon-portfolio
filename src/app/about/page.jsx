@@ -9,7 +9,7 @@ export const metadata = {
 const AboutPage = () => {
     return (
         <div className=" ">
-            <div className=" container mx-auto ">
+            <div className="  ">
                 <About/>
             </div>
         </div>

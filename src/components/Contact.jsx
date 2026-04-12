@@ -9,7 +9,7 @@ import {
 
 const Contact = () => {
     return (
-        <section className=" flex items-center  px-4 bg-base-200">
+        <section className=" flex items-center py-12 px-4 bg-base-200">
             <div className="container mx-auto w-full border-b border-gray-700 pb-20">
 
                 {/* HEADER */}
