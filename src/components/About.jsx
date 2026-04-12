@@ -1,9 +1,10 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { FaReact, FaNodeJs, FaLaptopCode } from "react-icons/fa";
 import { SiNextdotjs, SiTailwindcss } from "react-icons/si";
+import HireMeModal from "@/components/HireModal";
 
 const skills = [
     {
@@ -47,6 +48,8 @@ const card = {
 };
 
 const About = () => {
+    const [open, setOpen] = useState(false);
+
     return (
         <section className="bg-base-200 py-16 px-4">
             <div className="container mx-auto w-full">
@@ -99,7 +102,11 @@ const About = () => {
                                 Download CV
                             </button>
 
-                            <button className="btn btn-outline">
+                            {/* ✅ OPEN MODAL */}
+                            <button
+                                onClick={() => setOpen(true)}
+                                className="btn btn-outline"
+                            >
                                 Hire Me
                             </button>
                         </div>
@@ -124,7 +131,6 @@ const About = () => {
                             </motion.div>
                         ))}
 
-                        {/* FULL WIDTH CARD */}
                         <motion.div
                             variants={card}
                             className="col-span-2 bg-base-200 rounded-xl p-6 text-center hover:shadow-xl hover:-translate-y-1 transition"
@@ -135,9 +141,11 @@ const About = () => {
                             </p>
                         </motion.div>
                     </motion.div>
-
                 </div>
             </div>
+
+            {/* ✅ MODAL HERE */}
+            <HireMeModal open={open} onClose={() => setOpen(false)} />
         </section>
     );
 };

@@ -1,5 +1,5 @@
 import About from "@/components/About";
-
+import Chart from '@/Ui/Chart'
 
 export const metadata = {
   title: "About Sumon's",
@@ -11,6 +11,7 @@ const AboutPage = () => {
         <div className=" ">
             <div className="  ">
                 <About/>
+                <Chart/>
             </div>
         </div>
     );
