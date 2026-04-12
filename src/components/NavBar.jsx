@@ -11,7 +11,7 @@ const NavBar = () => {
     const [hireOpen, setHireOpen] = useState(false);
 
     return (
-        <div className="bg-base-100 sticky top-0 z-50 shadow-sm">
+        <div className=" sticky top-0 z-50 shadow-sm">
             <div className="container mx-auto text-gray-300">
 
                 {/* NAVBAR */}
