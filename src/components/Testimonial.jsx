@@ -1,5 +1,8 @@
+"use client";
+
 import TestimonialImage from "@/assets/image/testimonial.png";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const testimonials = [
     {
@@ -14,22 +17,59 @@ const testimonials = [
     },
 ];
 
+// container stagger
+const container = {
+    hidden: { opacity: 0 },
+    show: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.2,
+        },
+    },
+};
+
+// card animation
+const card = {
+    hidden: { opacity: 0, y: 40 },
+    show: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.6,
+            ease: "easeOut",
+        },
+    },
+};
+
 const Testimonial = () => {
     return (
-        <section className=" bg-base-200 py-16 px-4 ">
+        <section className="bg-base-200 py-16 px-4">
             <div className="container mx-auto border-b border-gray-700 pb-16">
 
                 {/* TITLE */}
-                <h1 className="text-3xl md:text-5xl font-bold text-center mb-12">
+                <motion.h1
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: false, amount: 0.3 }}
+                    transition={{ duration: 0.6 }}
+                    className="text-3xl md:text-5xl font-bold text-center mb-12"
+                >
                     Testimonials
-                </h1>
+                </motion.h1>
 
                 {/* GRID */}
-                <div className="grid md:grid-cols-2 gap-8">
+                <motion.div
+                    variants={container}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: false, amount: 0.2 }}
+                    className="grid md:grid-cols-2 gap-8"
+                >
 
                     {testimonials.map((item, index) => (
-                        <div
+                        <motion.div
                             key={index}
+                            variants={card}
                             className="bg-base-300 rounded-2xl p-6 shadow-md
                             hover:shadow-2xl hover:-translate-y-2
                             transition duration-300"
@@ -62,10 +102,11 @@ const Testimonial = () => {
                                 “{item.text}”
                             </p>
 
-                        </div>
+                        </motion.div>
                     ))}
 
-                </div>
+                </motion.div>
+
             </div>
         </section>
     );

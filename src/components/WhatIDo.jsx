@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { CgWebsite } from "react-icons/cg";
 import { DiResponsive } from "react-icons/di";
 import { FaCode, FaRegUserCircle, FaRocket } from "react-icons/fa";
@@ -36,44 +39,80 @@ const services = [
     },
 ];
 
+// container animation
+const container = {
+    hidden: { opacity: 0 },
+    show: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.15,
+        },
+    },
+};
+
+// item animation (renamed properly)
+const cardVariant = {
+    hidden: { opacity: 0, y: 40 },
+    show: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.6,
+            ease: "easeOut",
+        },
+    },
+};
+
 const WhatIDo = () => {
     return (
-        <section className=" bg-base-200  ">
+        <section className="bg-base-200">
             <div className="container mx-auto border-b border-gray-700 py-16 px-4 sm:px-6 lg:px-8">
 
                 {/* HEADER */}
-                <div className="mb-12">
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: false, amount: 0.3 }}
+                    transition={{ duration: 0.6 }}
+                    className="mb-12"
+                >
                     <p className="text-sm text-primary">Features</p>
                     <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-2">
                         What I Do
                     </h2>
-                </div>
+                </motion.div>
 
                 {/* GRID */}
-                <div className=" bg-base-400 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-
-                    {services.map((item, index) => (
-                        <div
+                <motion.div
+                    variants={container}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: false, amount: 0.2 }}
+                    className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+                >
+                    {services.map((service, index) => (
+                        <motion.div
                             key={index}
+                            variants={cardVariant}
                             className="p-6 rounded-2xl bg-neutral text-neutral-content shadow-md 
                             hover:shadow-2xl hover:-translate-y-2 
                             transition duration-300 flex flex-col gap-4"
                         >
                             <div className="text-3xl text-primary">
-                                {item.icon}
+                                {service.icon}
                             </div>
 
                             <h3 className="text-lg font-semibold">
-                                {item.title}
+                                {service.title}
                             </h3>
 
                             <p className="text-sm text-base-content/70">
-                                {item.desc}
+                                {service.desc}
                             </p>
-                        </div>
+                        </motion.div>
                     ))}
+                </motion.div>
 
-                </div>
             </div>
         </section>
     );

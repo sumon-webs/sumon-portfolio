@@ -1,52 +1,92 @@
+"use client";
+
 import { FaArrowRight, FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { motion } from "framer-motion";
+
+const projects = [
+    {
+        title: "Mess Booking Website",
+        desc: "Room booking system with details & booking form.",
+        tech: ["Next.js", "Tailwind", "MongoDB"],
+        live: "#",
+        github: "#",
+    },
+    {
+        title: "Portfolio Website",
+        desc: "Personal portfolio with modern UI design.",
+        tech: ["React", "Tailwind"],
+        live: "#",
+        github: "#",
+    },
+    {
+        title: "E-commerce UI",
+        desc: "Online shop interface with product cards.",
+        tech: ["Next.js", "Redux"],
+        live: "#",
+        github: "#",
+    },
+    {
+        title: "Dashboard UI",
+        desc: "Admin dashboard with charts and stats.",
+        tech: ["React", "Chart.js"],
+        live: "#",
+        github: "#",
+    },
+];
+
+// container stagger
+const container = {
+    hidden: { opacity: 0 },
+    show: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.15,
+        },
+    },
+};
+
+// card animation
+const card = {
+    hidden: { opacity: 0, y: 40 },
+    show: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.6,
+            ease: "easeOut",
+        },
+    },
+};
 
 const DemoProject = () => {
-    const projects = [
-        {
-            title: "Mess Booking Website",
-            desc: "Room booking system with details & booking form.",
-            tech: ["Next.js", "Tailwind", "MongoDB"],
-            live: "#",
-            github: "#",
-        },
-        {
-            title: "Portfolio Website",
-            desc: "Personal portfolio with modern UI design.",
-            tech: ["React", "Tailwind"],
-            live: "#",
-            github: "#",
-        },
-        {
-            title: "E-commerce UI",
-            desc: "Online shop interface with product cards.",
-            tech: ["Next.js", "Redux"],
-            live: "#",
-            github: "#",
-        },
-        {
-            title: "Dashboard UI",
-            desc: "Admin dashboard with charts and stats.",
-            tech: ["React", "Chart.js"],
-            live: "#",
-            github: "#",
-        },
-    ];
-
     return (
         <section className="py-16 px-4 bg-base-200">
             <div className="container mx-auto border-b border-gray-700 pb-16">
 
                 {/* TITLE */}
-                <h1 className="text-3xl md:text-5xl font-bold text-center mb-12">
+                <motion.h1
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: false, amount: 0.3 }}
+                    transition={{ duration: 0.6 }}
+                    className="text-3xl md:text-5xl font-bold text-center mb-12"
+                >
                     My Demo Projects
-                </h1>
+                </motion.h1>
 
                 {/* GRID */}
-                <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                <motion.div
+                    variants={container}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: false, amount: 0.2 }}
+                    className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3"
+                >
 
                     {projects.map((project, index) => (
-                        <div
+                        <motion.div
                             key={index}
+                            variants={card}
                             className="group bg-base-300 rounded-2xl p-6 relative overflow-hidden
                             shadow-md hover:shadow-2xl hover:-translate-y-2
                             transition duration-300 flex flex-col justify-between"
@@ -84,17 +124,11 @@ const DemoProject = () => {
 
                                 {/* LINKS */}
                                 <div className="flex gap-4 text-lg">
-                                    <a
-                                        href={project.github}
-                                        className="hover:text-primary transition"
-                                    >
+                                    <a href={project.github} className="hover:text-primary transition">
                                         <FaGithub />
                                     </a>
 
-                                    <a
-                                        href={project.live}
-                                        className="hover:text-primary transition"
-                                    >
+                                    <a href={project.live} className="hover:text-primary transition">
                                         <FaExternalLinkAlt />
                                     </a>
                                 </div>
@@ -112,10 +146,11 @@ const DemoProject = () => {
 
                             </div>
 
-                        </div>
+                        </motion.div>
                     ))}
 
-                </div>
+                </motion.div>
+
             </div>
         </section>
     );
