@@ -36,12 +36,12 @@ const NavBar = () => {
                     <ul className="hidden md:flex items-center gap-8 font-medium text-gray-300">
 
                         <li>
-                            <Link
-                                href="/"
+                            <a
+                                href="#home"
                                 className="hover:text-primary transition"
                             >
                                 Home
-                            </Link>
+                            </a>
                         </li>
 
                         <li>
@@ -99,13 +99,13 @@ const NavBar = () => {
                         <ul className="flex flex-col gap-4 font-medium text-gray-300 pt-4">
 
                             <li>
-                                <Link
-                                    href="/"
+                                <a
+                                    href="#home"
                                     onClick={() => setMenuOpen(false)}
                                     className="block hover:text-primary transition"
                                 >
                                     Home
-                                </Link>
+                                </a>
                             </li>
 
                             <li>

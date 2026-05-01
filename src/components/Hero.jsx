@@ -10,7 +10,7 @@ import { Typewriter } from "react-simple-typewriter";
 
 const Hero = () => {
     return (
-        <div className="bg-base-200 px-4 sm:px-6 lg:px-8">
+        <div id="home" className="bg-base-200 px-4 sm:px-6 lg:px-8">
 
             <div className="container mx-auto py-12 grid md:grid-cols-2 gap-10 items-center border-b border-gray-700">
 
