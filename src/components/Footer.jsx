@@ -1,4 +1,7 @@
+'use client'
+
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaArrowUp } from "react-icons/fa";
 
 const Footer = () => {
     return (
@@ -66,6 +69,12 @@ const Footer = () => {
                         </a>
                         <li>Location: Dhaka, Bangladesh</li>
                     </ul>
+                    <button
+                        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                        className=" cursor-pointer fixed bottom-6 right-6 p-3 rounded-full bg-primary text-white shadow-lg  transition hover:-translate-y-1"
+                    >
+                        <FaArrowUp />
+                    </button>
                 </div>
 
             </div>
@@ -74,6 +83,7 @@ const Footer = () => {
             <div className="border-t border-gray-800 text-center py-4 text-sm text-base-content/60">
                 © {new Date().getFullYear()} Sumon. All rights reserved.
             </div>
+
 
         </footer>
     );
