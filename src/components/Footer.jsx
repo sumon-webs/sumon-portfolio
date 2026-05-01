@@ -42,9 +42,9 @@ const Footer = () => {
                 <div>
                     <h6 className="font-semibold mb-3">Company</h6>
                     <ul className="space-y-2 text-sm">
-                        <li className="hover:text-primary cursor-pointer">About Me</li>
-                        <li className="hover:text-primary cursor-pointer">Projects</li>
-                        <li className="hover:text-primary cursor-pointer">Contact</li>
+                        <li className="hover:text-primary cursor-pointer"><a href="#resume">About</a></li>
+                        <li className="hover:text-primary cursor-pointer"><a href="#projects">Projects</a></li>
+                        <li className="hover:text-primary cursor-pointer"><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
 
@@ -52,8 +52,18 @@ const Footer = () => {
                 <div>
                     <h6 className="font-semibold mb-3">Contact</h6>
                     <ul className="space-y-2 text-sm text-base-content/70">
-                        <li>Email: example@email.com</li>
-                        <li>Phone: +880 1XXX-XXXXXX</li>
+                        <li>
+                            Email:{" "}
+                            <a
+                                href="mailto:sumon01333581557@gmail.com?subject=Hello&body=I want to contact you"
+                                className="hover:text-primary transition"
+                            >
+                                sumon01333581557@gmail.com
+                            </a>
+                        </li>
+                        <a href="tel:+8801333581557">
+                            +880 1333581557
+                        </a>
                         <li>Location: Dhaka, Bangladesh</li>
                     </ul>
                 </div>

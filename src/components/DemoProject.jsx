@@ -5,32 +5,29 @@ import { motion } from "framer-motion";
 
 const projects = [
     {
-        title: "Mess Booking Website",
+        title: "E-Commerse | Summer store",
         desc: "Room booking system with details & booking form.",
-        tech: ["Next.js", "Tailwind", "MongoDB"],
-        live: "#",
-        github: "#",
+        tech: ["Java sript","Next.js", "HeroUi", "MongoDB",],
+        live: "https://a-08-summer-store.vercel.app/",
     },
     {
         title: "Portfolio Website",
         desc: "Personal portfolio with modern UI design.",
-        tech: ["React", "Tailwind"],
-        live: "#",
-        github: "#",
+        tech: ["Java sript","React", "Tailwind"],
+        live: "https://sumon-portfolio-mu.vercel.app/",
     },
     {
-        title: "E-commerce UI",
+        title: "Ai image creator",
         desc: "Online shop interface with product cards.",
-        tech: ["Next.js", "Redux"],
-        live: "#",
-        github: "#",
+        tech: ["Java sript","Next.js", "HeroUi", "MongoDB"],
+        live: "https://ai-image-creator-six.vercel.app/",
+        
     },
     {
-        title: "Dashboard UI",
-        desc: "Admin dashboard with charts and stats.",
-        tech: ["React", "Chart.js"],
-        live: "#",
-        github: "#",
+        title: "Friend Find | KenKeeper",
+        desc: "You can find your friend with video, audeo and text",
+        tech: ["React", "Java sript", "DaysiUi",],
+        live: "https://ai-image-creator-six.vercel.app/",
     },
 ];
 
@@ -60,7 +57,9 @@ const card = {
 
 const DemoProject = () => {
     return (
-        <section className="py-16 px-4 bg-base-200">
+        <section
+        id="projects"
+        className="py-16 px-4 bg-base-200">
             <div className="container mx-auto border-b border-gray-700 pb-16">
 
                 {/* TITLE */}
@@ -124,22 +123,20 @@ const DemoProject = () => {
 
                                 {/* LINKS */}
                                 <div className="flex gap-4 text-lg">
-                                    <a href={project.github} className="hover:text-primary transition">
-                                        <FaGithub />
-                                    </a>
 
-                                    <a href={project.live} className="hover:text-primary transition">
+                                    <a target="blank" href={project.live} className="hover:text-primary transition">
                                         <FaExternalLinkAlt />
                                     </a>
                                 </div>
 
                                 {/* VIEW BUTTON */}
                                 <a
+                                    target="blank"
                                     href={project.live}
                                     className="flex items-center gap-2 text-sm font-medium group"
                                 >
                                     <span className="opacity-0 group-hover:opacity-100 transition">
-                                        View
+                                        Live Preview
                                     </span>
                                     <FaArrowRight className="group-hover:translate-x-1 transition" />
                                 </a>
