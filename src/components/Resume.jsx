@@ -13,14 +13,13 @@ const fadeUp = {
 
 const Resume = () => {
     return (
-        <section className="bg-base-200">
+        <section id="resume" className="bg-base-200">
             <div className="container mx-auto lg:py-16 px-4 sm:px-6 lg:px-8 border-b border-gray-700">
 
                 {/* HEADER */}
                 <motion.div
                     initial="hidden"
-                    whileInView="show"
-                    viewport={{ once: false, amount: 0.3 }}
+                    animate="show"
                     variants={fadeUp}
                     className="text-center mb-12"
                 >
@@ -39,16 +38,13 @@ const Resume = () => {
                     <TabList className="flex flex-wrap justify-center gap-4 mb-10">
 
                         <Tab
-                            className="px-6 sm:px-10 py-3 rounded-full bg-base-100 shadow 
-                            cursor-pointer transition hover:bg-primary hover:text-white"
-                            selectedClassName="bg-primary text-white shadow-lg"
+                            className="px-6 sm:px-10 py-3 rounded-full bg-base-100 shadow cursor-pointer transition hover:bg-primary hover:text-white" selectedClassName="bg-primary text-white shadow-lg"
                         >
                             🎓 Education
                         </Tab>
 
                         <Tab
-                            className="px-6 sm:px-10 py-3 rounded-full bg-base-100 shadow 
-                            cursor-pointer transition hover:bg-primary hover:text-white"
+                            className="px-6 sm:px-10 py-3 rounded-full bg-base-100 shadow cursor-pointer transition hover:bg-primary hover:text-white"
                             selectedClassName="bg-primary text-white shadow-lg"
                         >
                             💼 Skills
@@ -63,7 +59,6 @@ const Resume = () => {
                             <motion.div
                                 initial={{ opacity: 0, x: -30 }}
                                 whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: false, amount: 0.2 }}
                                 transition={{ duration: 0.4 }}
                             >
                                 <Education />
@@ -74,7 +69,6 @@ const Resume = () => {
                             <motion.div
                                 initial={{ opacity: 0, x: 30 }}
                                 whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: false, amount: 0.2 }}
                                 transition={{ duration: 0.6 }}
                             >
                                 <Skills />

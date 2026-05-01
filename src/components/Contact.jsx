@@ -9,7 +9,10 @@ import {
 
 const Contact = () => {
     return (
-        <section className=" flex items-center py-12 px-4 bg-base-200">
+        <section
+            id="contact"
+            className=" flex items-center py-12 px-4 bg-base-200">
+
             <div className="container mx-auto w-full border-b border-gray-700 pb-20">
 
                 {/* HEADER */}
@@ -64,11 +67,13 @@ const Contact = () => {
                             <h4 className="font-semibold mb-3">Find me on</h4>
 
                             <div className="flex gap-5 text-2xl text-base-content/70">
-                                <a className="hover:text-primary transition">
+                                <a href="https://github.com/sumon-webs" target="blank" className="hover:text-primary transition">
                                     <FaGithub />
                                 </a>
 
-                                <a className="hover:text-primary transition">
+                                <a
+                                    href="https://www.linkedin.com/in/md-sumon-ali1557/" target="blank"
+                                    className="hover:text-primary transition">
                                     <FaLinkedin />
                                 </a>
                             </div>

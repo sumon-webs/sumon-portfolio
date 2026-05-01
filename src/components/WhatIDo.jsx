@@ -94,9 +94,7 @@ const WhatIDo = () => {
                         <motion.div
                             key={index}
                             variants={cardVariant}
-                            className="p-6 rounded-2xl bg-neutral text-neutral-content shadow-md 
-                            hover:shadow-2xl hover:-translate-y-2 
-                            transition duration-300 flex flex-col gap-4"
+                            className="p-6 rounded-2xl bg-neutral text-neutral-content shadow-md hover:shadow-2xl hover:-translate-y-2  transition duration-300 flex flex-col gap-4"
                         >
                             <div className="text-3xl text-primary">
                                 {service.icon}

@@ -15,9 +15,15 @@ const Footer = () => {
 
                     {/* SOCIAL */}
                     <div className="flex gap-4 mt-4 text-xl">
-                        <FaGithub className="hover:text-primary cursor-pointer transition" />
-                        <FaLinkedin className="hover:text-primary cursor-pointer transition" />
-                        <FaTwitter className="hover:text-primary cursor-pointer transition" />
+                        <a href="https://github.com/sumon-webs" target="blank">
+                            <FaGithub className="hover:text-white cursor-pointer transition" />
+                        </a>
+                        <a href="https://x.com/sumon_ali1557" target="blank">
+                            <FaTwitter className="hover:text-sky-400 cursor-pointer transition" />
+                        </a>
+                        <a href="https://www.linkedin.com/in/md-sumon-ali1557/" target="blank">
+                            <FaLinkedin className="hover:text-blue-500 cursor-pointer transition" />
+                        </a>
                     </div>
                 </div>
 

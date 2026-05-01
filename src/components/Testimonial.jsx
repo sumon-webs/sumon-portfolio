@@ -43,7 +43,9 @@ const card = {
 
 const Testimonial = () => {
     return (
-        <section className="bg-base-200 py-16 px-4">
+        <section
+        id="about"
+        className="bg-base-200 py-16 px-4">
             <div className="container mx-auto border-b border-gray-700 pb-16">
 
                 {/* TITLE */}

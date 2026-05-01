@@ -57,7 +57,9 @@ const card = {
 
 const Pricing = () => {
     return (
-        <section className="bg-base-200 flex items-center px-4 py-20">
+        <section
+        id="pricing" 
+        className="bg-base-200 flex items-center px-4 py-20">
             <div className="max-w-6xl mx-auto w-full">
 
                 {/* HEADER */}
@@ -126,8 +128,8 @@ const Pricing = () => {
                                 <div className="card-actions justify-center mt-6">
                                     <button
                                         className={`btn w-full ${plan.popular
-                                                ? "btn-secondary"
-                                                : "btn-outline btn-primary"
+                                            ? "btn-secondary"
+                                            : "btn-outline btn-primary"
                                             }`}
                                     >
                                         Choose Plan
