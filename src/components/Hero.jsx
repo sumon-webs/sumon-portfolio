@@ -1,28 +1,50 @@
 "use client";
 
-import HeroImage from "../assets/image/hero.png";
 import Image from "next/image";
-import { FaCss3Alt, FaGithub, FaHtml5, FaNodeJs, FaReact, FaTwitter } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa6";
+import HeroImage from "../assets/image/hero.png";
+
+import {
+    FaGithub,
+    FaTwitter,
+    FaLinkedin,
+    FaHtml5,
+    FaCss3Alt,
+    FaReact,
+    FaNodeJs,
+} from "react-icons/fa";
+
 import { IoLogoJavascript } from "react-icons/io";
-import { SiExpress, SiFirebase, SiHeroui, SiMongodb, SiNextdotjs, SiTailwindcss } from "react-icons/si";
+import {
+    SiNextdotjs,
+    SiTailwindcss,
+    SiExpress,
+    SiMongodb,
+    SiFirebase,
+    SiHeroui,
+} from "react-icons/si";
+
 import { Typewriter } from "react-simple-typewriter";
 
 const Hero = () => {
     return (
-        <div id="home" className="bg-base-200 px-4 sm:px-6 lg:px-8">
-
-            <div className="container mx-auto py-12 grid md:grid-cols-2 gap-10 items-center border-b border-gray-700">
+        <section
+            id="home"
+            className="bg-base-200 px-4 sm:px-6 lg:px-8"
+        >
+            <div className="container mx-auto py-16 grid md:grid-cols-2 gap-12 items-center border-b border-gray-700">
 
                 {/* LEFT SIDE */}
                 <div className="flex flex-col justify-center">
 
-                    <p className="text-amber-500 mb-2">
+                    <p className="text-primary font-medium mb-3 tracking-wider">
                         Welcome to my world
                     </p>
 
-                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-base-content leading-tight">
-                        Hi, I am Sumon <br />
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+
+                        Hi, I am <span className="text-primary">Sumon</span>
+
+                        <br />
 
                         <span className="text-primary font-semibold">
                             <Typewriter
@@ -32,7 +54,7 @@ const Hero = () => {
                                     "React & Next.js Expert",
                                     "Backend Developer",
                                     "Node.js & Express.js",
-                                    "MongoDB Database Expert",
+                                    "MongoDB Expert",
                                     "Responsive Web Designer",
                                     "JavaScript Enthusiast",
                                 ]}
@@ -44,99 +66,112 @@ const Hero = () => {
                                 delaySpeed={1800}
                             />
                         </span>
+
                     </h1>
 
-                    {/* DESCRIPTION */}
-                    <p className="mt-6 text-gray-400 max-w-xl">
-                        I build modern, responsive, and user-friendly web
-                        applications. My focus is on clean UI, smooth user
-                        experience, and performance.
+                    <p className="mt-6 text-base-content/70 max-w-xl leading-relaxed">
+                        I build modern, responsive, and high-performance web applications
+                        with clean UI and smooth user experience using MERN stack & Next.js.
                     </p>
 
-                    {/* SOCIAL + SKILLS */}
-                    <div className="mt-8 flex flex-col sm:flex-row sm:justify-between gap-8">
+                    {/* SOCIAL */}
+                    <div className="mt-8">
 
-                        {/* Social */}
-                        <div>
-                            <h3 className="font-semibold mb-3 text-gray-400">
-                                Find with me
-                            </h3>
+                        <h3 className="font-semibold mb-4 text-base-content/60">
+                            Find me on
+                        </h3>
 
-                            <div className="flex gap-4 text-2xl text-gray-400">
-                                <a href="https://github.com/sumon-webs" target="blank">
-                                    <FaGithub className="hover:text-white cursor-pointer transition" />
-                                </a>
-                                <a href="https://x.com/sumon_ali1557" target="blank">
-                                    <FaTwitter className="hover:text-sky-400 cursor-pointer transition" />
-                                </a>
-                                <a href="https://www.linkedin.com/in/md-sumon-ali1557/" target="blank">
-                                    <FaLinkedin className="hover:text-blue-500 cursor-pointer transition" />
-                                </a>
-                            </div>
-                        </div>
+                        <div className="flex gap-5 text-2xl">
 
-                        {/* Skills */}
-                        <div className="space-y-6">
+                            <a
+                                href="https://github.com/sumon-webs"
+                                target="_blank"
+                                className="hover:text-white hover:scale-110 transition"
+                            >
+                                <FaGithub />
+                            </a>
 
-                            {/* FRONTEND */}
-                            <div>
-                                <h3 className="font-semibold mb-3 text-gray-400">
-                                    Frontend Skills
-                                </h3>
+                            <a
+                                href="https://x.com/sumon_ali1557"
+                                target="_blank"
+                                className="hover:text-sky-400 hover:scale-110 transition"
+                            >
+                                <FaTwitter />
+                            </a>
 
-                                <div className="flex flex-wrap gap-4 text-3xl text-gray-400">
-
-                                    <FaHtml5 className="hover:text-orange-500 transition duration-300" />
-
-                                    <FaCss3Alt className="hover:text-blue-500 transition duration-300" />
-
-                                    <IoLogoJavascript className="hover:text-yellow-400 transition duration-300" />
-
-                                    <FaReact className="hover:text-cyan-400 transition duration-300" />
-
-                                    <SiNextdotjs className="hover:text-white transition duration-300" />
-
-                                    <SiTailwindcss className="hover:text-sky-400 transition duration-300" />
-                                    <SiHeroui className="hover:text-sky-400 transition duration-300" />
-
-                                </div>
-                            </div>
-
-                            {/* BACKEND */}
-                            <div>
-                                <h3 className="font-semibold mb-3 text-gray-400">
-                                    Backend Skills
-                                </h3>
-
-                                <div className="flex flex-wrap gap-4 text-3xl text-gray-400">
-
-                                    <FaNodeJs className="hover:text-green-500 transition duration-300" />
-
-                                    <SiExpress className="hover:text-white transition duration-300" />
-
-                                    <SiMongodb className="hover:text-green-400 transition duration-300" />
-
-                                    <SiFirebase className="hover:text-yellow-500 transition duration-300" />
-
-                                </div>
-                            </div>
+                            <a
+                                href="https://www.linkedin.com/in/md-sumon-ali1557/"
+                                target="_blank"
+                                className="hover:text-blue-500 hover:scale-110 transition"
+                            >
+                                <FaLinkedin />
+                            </a>
 
                         </div>
 
                     </div>
+
+                    {/* SKILLS */}
+                    <div className="mt-10 space-y-6">
+
+                        {/* FRONTEND */}
+                        <div>
+                            <h3 className="font-semibold mb-3 text-base-content/60">
+                                Frontend Skills
+                            </h3>
+
+                            <div className="flex flex-wrap gap-5 text-3xl text-base-content/60">
+
+                                <FaHtml5 className="hover:text-orange-500 transition" />
+                                <FaCss3Alt className="hover:text-blue-500 transition" />
+                                <IoLogoJavascript className="hover:text-yellow-400 transition" />
+                                <FaReact className="hover:text-cyan-400 transition" />
+                                <SiNextdotjs className="hover:text-white transition" />
+                                <SiTailwindcss className="hover:text-sky-400 transition" />
+                                <SiHeroui className="hover:text-sky-400 transition" />
+
+                            </div>
+                        </div>
+
+                        {/* BACKEND */}
+                        <div>
+                            <h3 className="font-semibold mb-3 text-base-content/60">
+                                Backend Skills
+                            </h3>
+
+                            <div className="flex flex-wrap gap-5 text-3xl text-base-content/60">
+
+                                <FaNodeJs className="hover:text-green-500 transition" />
+                                <SiExpress className="hover:text-white transition" />
+                                <SiMongodb className="hover:text-green-400 transition" />
+                                <SiFirebase className="hover:text-yellow-500 transition" />
+
+                            </div>
+                        </div>
+
+                    </div>
+
                 </div>
 
                 {/* RIGHT SIDE IMAGE */}
                 <div className="flex justify-center md:justify-end">
-                    <Image
-                        src={HeroImage}
-                        alt="hero image"
-                        className="w-[280px] sm:w-[350px] md:w-[450px] lg:w-[550px] h-auto object-contain rounded-xl shadow-2xl"
-                    />
+
+                    <div className="relative">
+
+                        <div className="absolute -inset-4 bg-primary/20 blur-2xl rounded-full"></div>
+
+                        <Image
+                            src={HeroImage}
+                            alt="hero image"
+                            className="relative z-10 w-[280px] sm:w-[350px] md:w-[450px] lg:w-[520px] object-contain rounded-2xl shadow-2xl"
+                        />
+
+                    </div>
+
                 </div>
 
             </div>
-        </div>
+        </section>
     );
 };
 
