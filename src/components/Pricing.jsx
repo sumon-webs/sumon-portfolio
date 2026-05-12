@@ -1,18 +1,20 @@
 "use client";
 
-import { FaCheck } from "react-icons/fa";
+import { FaCheck, FaCrown } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const plans = [
     {
         name: "Basic",
         price: "$19",
+        description: "For simple landing pages",
         features: ["1 Page Website", "Responsive Design", "Basic Support"],
         popular: false,
     },
     {
         name: "Standard",
         price: "$49",
+        description: "Best for small business",
         features: [
             "5 Pages Website",
             "Responsive Design",
@@ -24,6 +26,7 @@ const plans = [
     {
         name: "Premium",
         price: "$99",
+        description: "For full-scale web apps",
         features: [
             "Full Website",
             "Admin Dashboard",
@@ -34,7 +37,7 @@ const plans = [
     },
 ];
 
-// container (stagger effect)
+// container animation
 const container = {
     hidden: { opacity: 0 },
     show: {
@@ -51,90 +54,120 @@ const card = {
     show: {
         opacity: 1,
         y: 0,
-        transition: { duration: 0.6, ease: "easeOut" },
+        transition: {
+            duration: 0.6,
+            ease: "easeOut",
+        },
     },
 };
 
 const Pricing = () => {
     return (
         <section
-        id="pricing" 
-        className="bg-base-200 flex items-center px-4 py-20">
-            <div className="max-w-6xl mx-auto w-full">
+            id="pricing"
+            className="bg-base-200 py-20 px-4"
+        >
+            <div className="container mx-auto border-b border-gray-700 pb-16">
 
                 {/* HEADER */}
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: false, amount: 0.3 }}
+                    viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6 }}
-                    className="text-center mb-12"
+                    className="text-center mb-14"
                 >
-                    <h2 className="text-4xl font-bold">Pricing Plans</h2>
-                    <p className="text-base-content/70 mt-3">
-                        Choose a plan that fits your needs
+                    <p className="text-sm uppercase tracking-widest text-primary font-semibold">
+                        Pricing
+                    </p>
+
+                    <h2 className="text-3xl md:text-5xl font-bold mt-3">
+                        Pricing Plans
+                    </h2>
+
+                    <p className="text-base-content/70 mt-4 max-w-2xl mx-auto">
+                        Choose a plan that fits your needs. Flexible pricing for
+                        different types of web development projects.
                     </p>
                 </motion.div>
 
-                {/* PRICING GRID */}
+                {/* GRID */}
                 <motion.div
                     variants={container}
                     initial="hidden"
                     whileInView="show"
-                    viewport={{ once: false, amount: 0.2 }}
+                    viewport={{ once: true, amount: 0.2 }}
                     className="grid md:grid-cols-3 gap-8"
                 >
-                    {plans.map((plan, index) => (
+                    {plans.map((plan) => (
                         <motion.div
-                            key={index}
+                            key={plan.name}
                             variants={card}
-                            className={`card shadow-xl transition hover:shadow-2xl
-                                ${plan.popular
-                                    ? "bg-primary text-primary-content scale-105"
-                                    : "bg-base-100"
-                                }`}
+                            className={`
+                relative
+                rounded-3xl
+                shadow-md
+                hover:shadow-2xl
+                hover:-translate-y-2
+                transition duration-300
+                border
+                ${plan.popular
+                                    ? "bg-primary text-primary-content border-primary"
+                                    : "bg-base-300 border-transparent"
+                                }
+              `}
                         >
-                            <div className="card-body text-center">
 
-                                {/* POPULAR BADGE */}
-                                {plan.popular && (
-                                    <div className="badge badge-secondary mb-2">
-                                        Most Popular
-                                    </div>
-                                )}
+                            {/* POPULAR BADGE */}
+                            {plan.popular && (
+                                <div className="absolute top-4 right-4">
+                                    <span className="flex items-center gap-1 text-xs px-3 py-1 rounded-full bg-secondary text-white">
+                                        <FaCrown /> Popular
+                                    </span>
+                                </div>
+                            )}
 
+                            <div className="p-8 text-center">
+
+                                {/* TITLE */}
                                 <h3 className="text-2xl font-bold">
                                     {plan.name}
                                 </h3>
 
-                                <p className="text-4xl font-extrabold my-4">
+                                <p className="text-sm opacity-70 mt-2">
+                                    {plan.description}
+                                </p>
+
+                                {/* PRICE */}
+                                <p className="text-4xl font-extrabold my-6">
                                     {plan.price}
                                 </p>
 
                                 {/* FEATURES */}
-                                <ul className="space-y-2 text-left text-base-content/80">
-                                    {plan.features.map((feature, i) => (
+                                <ul className="space-y-3 text-left text-sm md:text-base">
+                                    {plan.features.map((feature) => (
                                         <li
-                                            key={i}
-                                            className="flex items-center gap-2"
+                                            key={feature}
+                                            className="flex items-center gap-3"
                                         >
-                                            <FaCheck />
+                                            <FaCheck className="text-primary" />
                                             {feature}
                                         </li>
                                     ))}
                                 </ul>
 
                                 {/* BUTTON */}
-                                <div className="card-actions justify-center mt-6">
-                                    <button
-                                        className={`btn w-full ${plan.popular
-                                            ? "btn-secondary"
-                                            : "btn-outline btn-primary"
-                                            }`}
-                                    >
-                                        Choose Plan
-                                    </button>
-                                </div>
+                                <button
+                                    className={`
+                    mt-8 w-full py-3 rounded-xl font-medium transition
+                    ${plan.popular
+                                            ? "bg-white text-primary hover:opacity-90"
+                                            : "bg-primary text-white hover:bg-primary/90"
+                                        }
+                  `}
+                                >
+                                    Choose Plan
+                                </button>
 
                             </div>
                         </motion.div>
