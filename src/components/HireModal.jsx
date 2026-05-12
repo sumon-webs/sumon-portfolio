@@ -4,36 +4,47 @@ import React, { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const HireMeModal = ({ open, onClose }) => {
-
     // ESC key press to close
     useEffect(() => {
+        if (!open) return;
+
         const handleEsc = (e) => {
-            if (e.key === "Escape") onClose();
+            if (e.key === "Escape") onClose?.();
         };
 
         window.addEventListener("keydown", handleEsc);
+
         return () => window.removeEventListener("keydown", handleEsc);
-    }, [onClose]);
+    }, [open, onClose]);
+
+    // prevent form reload
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // এখানে তুমি API call বা email send logic দিতে পারো
+        console.log("Form submitted");
+        onClose?.();
+    };
 
     return (
         <AnimatePresence>
             {open && (
                 <div
                     className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 px-4"
-                    onClick={onClose}
+                    onClick={() => onClose?.()}
                 >
-                    {/* MODAL */}
                     <motion.div
+                        role="dialog"
+                        aria-modal="true"
                         initial={{ opacity: 0, scale: 0.8, y: 30 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.8, y: 30 }}
                         transition={{ duration: 0.3 }}
                         className="bg-base-100 w-full max-w-lg rounded-2xl shadow-xl p-6 relative"
-                        onClick={(e) => e.stopPropagation()} // prevent close when clicking inside
+                        onClick={(e) => e.stopPropagation()}
                     >
                         {/* CLOSE BUTTON */}
                         <button
-                            onClick={onClose}
+                            onClick={() => onClose?.()}
                             className="btn btn-sm btn-circle absolute right-3 top-3"
                         >
                             ✕
@@ -48,8 +59,7 @@ const HireMeModal = ({ open, onClose }) => {
                         </p>
 
                         {/* FORM */}
-                        <form className="space-y-4">
-
+                        <form className="space-y-4" onSubmit={handleSubmit}>
                             <input
                                 type="text"
                                 placeholder="Your Name"
@@ -64,8 +74,14 @@ const HireMeModal = ({ open, onClose }) => {
                                 required
                             />
 
-                            <select className="select select-bordered w-full" defaultValue="">
-                                <option value="" disabled>Select Service</option>
+                            <select
+                                className="select select-bordered w-full"
+                                defaultValue=""
+                                required
+                            >
+                                <option value="" disabled>
+                                    Select Service
+                                </option>
                                 <option value="landing">Landing Page</option>
                                 <option value="website">Full Website</option>
                                 <option value="bug">Bug Fix</option>
@@ -78,7 +94,7 @@ const HireMeModal = ({ open, onClose }) => {
                                 className="textarea textarea-bordered w-full"
                             />
 
-                            <button className="btn btn-primary w-full">
+                            <button type="submit" className="btn btn-primary w-full">
                                 Send Request
                             </button>
                         </form>
