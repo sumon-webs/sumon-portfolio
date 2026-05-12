@@ -25,7 +25,7 @@ const Contact = () => {
         const data = {
             from_name: form.from_name.value,
             from_email: form.from_email.value,
-            subject: form.subject.value,
+            subject: form.service.value,
             message: form.message.value,
         };
 
@@ -162,12 +162,20 @@ const Contact = () => {
                                 required
                             />
 
-                            <input
-                                name="subject"
-                                type="text"
-                                placeholder="Subject"
-                                className="input input-bordered w-full"
-                            />
+                            <select
+                                name="service"
+                                className="select select-bordered w-full"
+                                required
+                                defaultValue=""
+                            >
+                                <option value="" disabled>
+                                    Select Service
+                                </option>
+                                <option value="landing">Landing Page</option>
+                                <option value="website">Full Website</option>
+                                <option value="bug">Bug Fix</option>
+                                <option value="api">API Integration</option>
+                            </select>
 
                             <textarea
                                 name="message"

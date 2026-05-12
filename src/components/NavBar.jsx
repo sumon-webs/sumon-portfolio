@@ -120,7 +120,7 @@ const NavBar = () => {
 
                             <li>
                                 <a
-                                    href="#resume"
+                                    href="#contact"
                                     onClick={() => setMenuOpen(false)}
                                     className="block hover:text-primary transition"
                                 >
