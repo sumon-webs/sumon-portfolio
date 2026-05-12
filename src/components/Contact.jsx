@@ -51,7 +51,6 @@ const Contact = () => {
             alert("Something went wrong ❌");
         }
     };
-    // re_Ka2hApYS_fLhw6ADszG9BfwWY4JDNzFuZ
 
     return (
         <section id="contact" className="bg-base-200 py-20 px-4">
