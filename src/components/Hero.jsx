@@ -2,10 +2,10 @@
 
 import HeroImage from "../assets/image/hero.png";
 import Image from "next/image";
-import { FaGithub, FaReact, FaTwitter } from "react-icons/fa";
+import { FaCss3Alt, FaGithub, FaHtml5, FaNodeJs, FaReact, FaTwitter } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa6";
 import { IoLogoJavascript } from "react-icons/io";
-import { SiNextdotjs } from "react-icons/si";
+import { SiExpress, SiFirebase, SiHeroui, SiMongodb, SiNextdotjs, SiTailwindcss } from "react-icons/si";
 import { Typewriter } from "react-simple-typewriter";
 
 const Hero = () => {
@@ -24,20 +24,24 @@ const Hero = () => {
                     <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-base-content leading-tight">
                         Hi, I am Sumon <br />
 
-                        <span className="text-primary">
+                        <span className="text-primary font-semibold">
                             <Typewriter
                                 words={[
-                                    "a Web Developer",
-                                    "a Web Designer",
-                                    "HTML, CSS, JavaScript",
-                                    "React & Next.js"
+                                    "MERN Stack Developer",
+                                    "Frontend Developer",
+                                    "React & Next.js Expert",
+                                    "Backend Developer",
+                                    "Node.js & Express.js",
+                                    "MongoDB Database Expert",
+                                    "Responsive Web Designer",
+                                    "JavaScript Enthusiast",
                                 ]}
-                                loop
+                                loop={0}
                                 cursor
                                 cursorStyle="|"
-                                typeSpeed={80}
-                                deleteSpeed={60}
-                                delaySpeed={1500}
+                                typeSpeed={70}
+                                deleteSpeed={50}
+                                delaySpeed={1800}
                             />
                         </span>
                     </h1>
@@ -72,16 +76,51 @@ const Hero = () => {
                         </div>
 
                         {/* Skills */}
-                        <div>
-                            <h3 className="font-semibold mb-3 text-gray-400">
-                                Best skills on
-                            </h3>
+                        <div className="space-y-6">
 
-                            <div className="flex gap-4 text-2xl text-gray-400">
-                                <FaReact className="hover:text-cyan-400 transition" />
-                                <IoLogoJavascript className="hover:text-cyan-400 transition" />
-                                <SiNextdotjs className="hover:text-cyan-400 transition" />
+                            {/* FRONTEND */}
+                            <div>
+                                <h3 className="font-semibold mb-3 text-gray-400">
+                                    Frontend Skills
+                                </h3>
+
+                                <div className="flex flex-wrap gap-4 text-3xl text-gray-400">
+
+                                    <FaHtml5 className="hover:text-orange-500 transition duration-300" />
+
+                                    <FaCss3Alt className="hover:text-blue-500 transition duration-300" />
+
+                                    <IoLogoJavascript className="hover:text-yellow-400 transition duration-300" />
+
+                                    <FaReact className="hover:text-cyan-400 transition duration-300" />
+
+                                    <SiNextdotjs className="hover:text-white transition duration-300" />
+
+                                    <SiTailwindcss className="hover:text-sky-400 transition duration-300" />
+                                    <SiHeroui className="hover:text-sky-400 transition duration-300" />
+
+                                </div>
                             </div>
+
+                            {/* BACKEND */}
+                            <div>
+                                <h3 className="font-semibold mb-3 text-gray-400">
+                                    Backend Skills
+                                </h3>
+
+                                <div className="flex flex-wrap gap-4 text-3xl text-gray-400">
+
+                                    <FaNodeJs className="hover:text-green-500 transition duration-300" />
+
+                                    <SiExpress className="hover:text-white transition duration-300" />
+
+                                    <SiMongodb className="hover:text-green-400 transition duration-300" />
+
+                                    <SiFirebase className="hover:text-yellow-500 transition duration-300" />
+
+                                </div>
+                            </div>
+
                         </div>
 
                     </div>
