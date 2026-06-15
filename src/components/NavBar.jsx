@@ -62,14 +62,14 @@ const NavBar = () => {
                             </a>
                         </li>
 
-                        <li>
+                        {/* <li>
                             <a
                                 href="#pricing"
                                 className="hover:text-primary transition"
                             >
                                 Pricing
                             </a>
-                        </li>
+                        </li> */}
 
                     </ul>
 
@@ -128,7 +128,7 @@ const NavBar = () => {
                                 </a>
                             </li>
 
-                            <li>
+                            {/* <li>
                                 <a
                                     href="#pricing"
                                     onClick={() => setMenuOpen(false)}
@@ -136,7 +136,7 @@ const NavBar = () => {
                                 >
                                     Pricing
                                 </a>
-                            </li>
+                            </li> */}
 
                             <button
                                 onClick={() => {
