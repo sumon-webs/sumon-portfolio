@@ -5,18 +5,20 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
-    title: "HireLoop | Recruitment Platform",
-    desc: "Multi-role recruitment platform with Seeker, Recruiter and Admin dashboards, authentication, job posting and application management.",
+    title: "ArtHub | Online Art Marketplace",
+    desc: "Full-stack art marketplace connecting artists, buyers, and admins with role-based dashboards, artwork management, subscription plans, and analytics system.",
     tech: [
       "Next.js",
       "React",
       "Node.js",
       "Express.js",
       "MongoDB",
-      "Better Auth",
+      "JWT / Better Auth",
+      "Tailwind CSS",
+      "HeroUI",
     ],
-    live: "https://hireloop-client-zeta.vercel.app/",
-    github: "https://github.com/sumon-webs/hireloop-client",
+    live: "https://arthub-client-ten.vercel.app/",
+    github: "https://github.com/sumon-webs/arthub-client",
   },
 
   {
@@ -70,7 +72,7 @@ const card = {
 
 const DemoProject = () => {
   return (
-    <section id="projects" className="py-16 px-4 bg-base-200">
+    <section id="project" className="py-16 px-4 bg-base-200">
       <div className="container mx-auto border-b border-gray-700 pb-16">
         {/* TITLE */}
         <motion.h1

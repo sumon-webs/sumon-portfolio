@@ -3,7 +3,7 @@ import DemoProject from "@/components/DemoProject";
 import Hero from "@/components/Hero";
 // import Pricing from "@/components/Pricing";
 import Resume from "@/components/Resume";
-import Testimonial from "@/components/Testimonial";
+// import Testimonial from "@/components/Testimonial";
 import WhatIDo from "@/components/WhatIDo";
 
 
@@ -13,7 +13,7 @@ const HomePage = () => {
       <Hero />
       <WhatIDo />
       <Resume/>
-      <Testimonial/>
+      {/* <Testimonial/> */}
       <DemoProject/>
       {/* <Pricing/> */}
       <Contact/>

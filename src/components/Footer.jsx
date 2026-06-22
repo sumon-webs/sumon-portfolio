@@ -84,15 +84,14 @@ const Footer = () => {
                             </a>
                         </li>
 
-                        <li>
-                            <a href="#projects" className="hover:text-primary transition">
-                                Projects
-                            </a>
-                        </li>
-
-                        <li>
+                        {/* <li>
                             <a href="#pricing" className="hover:text-primary transition">
                                 Pricing
+                            </a>
+                        </li> */}
+                          <li>
+                            <a href="#project" className="hover:text-primary transition">
+                                Project
                             </a>
                         </li>
 
