@@ -5,6 +5,7 @@ import NavBarImage from "../assets/image/navbar.png";
 import Image from "next/image";
 import HireMeModal from "@/components/HireModal";
 import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
 
 const NavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -25,52 +26,55 @@ const NavBar = () => {
               className="rounded-full"
             />
 
-            <h1 className="text-xl font-bold tracking-wide text-white">
+            <span className="text-xl font-bold tracking-wide text-white">
               SUMON
-            </h1>
+            </span>
           </div>
 
           {/* DESKTOP MENU */}
-          <ul className="hidden md:flex items-center gap-8 font-medium text-gray-300">
+          <ul className="hidden md:flex items-center gap-6 font-medium text-gray-300">
             <li>
-              <a href="#home" className="hover:text-primary transition">
+              <a
+                href="#home"
+                className="hover:text-primary focus-visible:text-primary outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-base-300 rounded-md px-2 py-1 transition duration-300"
+              >
                 Home
               </a>
             </li>
 
             <li>
-              <a href="#resume" className="hover:text-primary transition">
+              <a
+                href="#resume"
+                className="hover:text-primary focus-visible:text-primary outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-base-300 rounded-md px-2 py-1 transition duration-300"
+              >
                 About
               </a>
             </li>
 
             <li>
-              <a href="#project" className="hover:text-primary transition">
+              <a
+                href="#project"
+                className="hover:text-primary focus-visible:text-primary outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-base-300 rounded-md px-2 py-1 transition duration-300"
+              >
                 Project
               </a>
             </li>
 
             <li>
-              <a href="#contact" className="hover:text-primary transition">
+              <a
+                href="#contact"
+                className="hover:text-primary focus-visible:text-primary outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-base-300 rounded-md px-2 py-1 transition duration-300"
+              >
                 Contact
               </a>
             </li>
-
-            {/* <li>
-                            <a
-                                href="#pricing"
-                                className="hover:text-primary transition"
-                            >
-                                Pricing
-                            </a>
-                        </li> */}
           </ul>
 
           {/* DESKTOP BUTTON */}
           <div className="hidden md:block">
             <button
               onClick={() => setHireOpen(true)}
-              className="btn btn-primary rounded-full px-6"
+              className="btn btn-primary rounded-full px-6 transition duration-300 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-base-300 focus-visible:outline-none"
             >
               Hire Me 🚀
             </button>
@@ -79,78 +83,80 @@ const NavBar = () => {
           {/* MOBILE MENU BUTTON */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden btn btn-ghost btn-circle text-2xl text-white"
+            className="md:hidden btn btn-ghost btn-circle text-2xl text-white focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
+            aria-label="Toggle navigation menu"
+            aria-expanded={menuOpen}
           >
             {menuOpen ? "✖" : "☰"}
           </button>
         </div>
 
         {/* MOBILE MENU */}
-        {menuOpen && (
-          <div className="md:hidden pb-5">
-            <ul className="flex flex-col gap-4 font-medium text-gray-300 pt-4">
-              <li>
-                <a
-                  href="#home"
-                  onClick={() => setMenuOpen(false)}
-                  className="block hover:text-primary transition"
-                >
-                  Home
-                </a>
-              </li>
+        <AnimatePresence>
+          {menuOpen && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="md:hidden overflow-hidden"
+            >
+              <ul className="flex flex-col gap-4 font-medium text-gray-300 pt-2 pb-5 border-t border-white/5">
+                <li>
+                  <a
+                    href="#home"
+                    onClick={() => setMenuOpen(false)}
+                    className="block hover:text-primary focus-visible:text-primary outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-md py-1 transition duration-300"
+                  >
+                    Home
+                  </a>
+                </li>
 
-              <li>
-                <a
-                  href="#resume"
-                  onClick={() => setMenuOpen(false)}
-                  className="block hover:text-primary transition"
-                >
-                  About
-                </a>
-              </li>
+                <li>
+                  <a
+                    href="#resume"
+                    onClick={() => setMenuOpen(false)}
+                    className="block hover:text-primary focus-visible:text-primary outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-md py-1 transition duration-300"
+                  >
+                    About
+                  </a>
+                </li>
 
-              <li>
-                <a
-                  href="#project"
-                  onClick={() => setMenuOpen(false)}
-                  className="block hover:text-primary transition"
-                >
-                  Project
-                </a>
-              </li>
+                <li>
+                  <a
+                    href="#project"
+                    onClick={() => setMenuOpen(false)}
+                    className="block hover:text-primary focus-visible:text-primary outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-md py-1 transition duration-300"
+                  >
+                    Project
+                  </a>
+                </li>
 
-              <li>
-                <a
-                  href="#contact"
-                  onClick={() => setMenuOpen(false)}
-                  className="block hover:text-primary transition"
-                >
-                  Contact
-                </a>
-              </li>
+                <li>
+                  <a
+                    href="#contact"
+                    onClick={() => setMenuOpen(false)}
+                    className="block hover:text-primary focus-visible:text-primary outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-md py-1 transition duration-300"
+                  >
+                    Contact
+                  </a>
+                </li>
 
-              {/* <li>
-                                <a
-                                    href="#pricing"
-                                    onClick={() => setMenuOpen(false)}
-                                    className="block hover:text-primary transition"
-                                >
-                                    Pricing
-                                </a>
-                            </li> */}
-
-              <button
-                onClick={() => {
-                  setHireOpen(true);
-                  setMenuOpen(false);
-                }}
-                className="btn btn-primary rounded-full w-full mt-2"
-              >
-                Hire Me 🚀
-              </button>
-            </ul>
-          </div>
-        )}
+                <li>
+                  <button
+                    onClick={() => {
+                      setHireOpen(true);
+                      setMenuOpen(false);
+                    }}
+                    className="btn btn-primary rounded-full w-full mt-2 transition duration-300 focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
+                  >
+                    Hire Me 🚀
+                  </button>
+                </li>
+              </ul>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         {/* MODAL */}
         <HireMeModal open={hireOpen} onClose={() => setHireOpen(false)} />

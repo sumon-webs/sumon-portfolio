@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import HeroImage from "../assets/image/hero.png";
+import { motion } from "framer-motion";
 
 import {
     FaGithub,
@@ -34,7 +35,12 @@ const Hero = () => {
             <div className="container mx-auto py-16 grid md:grid-cols-2 gap-12 items-center border-b border-gray-700">
 
                 {/* LEFT SIDE */}
-                <div className="flex flex-col justify-center">
+                <motion.div 
+                    initial={{ opacity: 0, x: -40 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    className="flex flex-col justify-center"
+                >
 
                     <p className="text-primary font-medium mb-3 tracking-wider">
                         Welcome to my world
@@ -83,29 +89,41 @@ const Hero = () => {
 
                         <div className="flex gap-5 text-2xl">
 
-                            <a
+                            <motion.a
                                 href="https://github.com/sumon-webs"
                                 target="_blank"
-                                className="hover:text-white hover:scale-110 transition"
+                                rel="noopener noreferrer"
+                                aria-label="GitHub Profile"
+                                whileHover={{ scale: 1.15 }}
+                                whileTap={{ scale: 0.95 }}
+                                className="hover:text-white outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-base-200 rounded-lg p-1 transition"
                             >
                                 <FaGithub />
-                            </a>
+                            </motion.a>
 
-                            <a
+                            <motion.a
                                 href="https://x.com/sumon_ali1557"
                                 target="_blank"
-                                className="hover:text-sky-400 hover:scale-110 transition"
+                                rel="noopener noreferrer"
+                                aria-label="Twitter Profile"
+                                whileHover={{ scale: 1.15 }}
+                                whileTap={{ scale: 0.95 }}
+                                className="hover:text-sky-400 outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-base-200 rounded-lg p-1 transition"
                             >
                                 <FaTwitter />
-                            </a>
+                            </motion.a>
 
-                            <a
+                            <motion.a
                                 href="https://www.linkedin.com/in/md-sumon-ali1557/"
                                 target="_blank"
-                                className="hover:text-blue-500 hover:scale-110 transition"
+                                rel="noopener noreferrer"
+                                aria-label="LinkedIn Profile"
+                                whileHover={{ scale: 1.15 }}
+                                whileTap={{ scale: 0.95 }}
+                                className="hover:text-blue-500 outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-base-200 rounded-lg p-1 transition"
                             >
                                 <FaLinkedin />
-                            </a>
+                            </motion.a>
 
                         </div>
 
@@ -122,13 +140,13 @@ const Hero = () => {
 
                             <div className="flex flex-wrap gap-5 text-3xl text-base-content/60">
 
-                                <FaHtml5 className="hover:text-orange-500 transition" />
-                                <FaCss3Alt className="hover:text-blue-500 transition" />
-                                <IoLogoJavascript className="hover:text-yellow-400 transition" />
-                                <FaReact className="hover:text-cyan-400 transition" />
-                                <SiNextdotjs className="hover:text-white transition" />
-                                <SiTailwindcss className="hover:text-sky-400 transition" />
-                                <SiHeroui className="hover:text-sky-400 transition" />
+                                <FaHtml5 className="hover:text-orange-500 hover:scale-120 hover:rotate-6 hover:-translate-y-1 transition-all duration-300 cursor-pointer" />
+                                <FaCss3Alt className="hover:text-blue-500 hover:scale-120 hover:rotate-6 hover:-translate-y-1 transition-all duration-300 cursor-pointer" />
+                                <IoLogoJavascript className="hover:text-yellow-400 hover:scale-120 hover:rotate-6 hover:-translate-y-1 transition-all duration-300 cursor-pointer" />
+                                <FaReact className="hover:text-cyan-400 hover:scale-120 hover:rotate-6 hover:-translate-y-1 transition-all duration-300 cursor-pointer" />
+                                <SiNextdotjs className="hover:text-white hover:scale-120 hover:rotate-6 hover:-translate-y-1 transition-all duration-300 cursor-pointer" />
+                                <SiTailwindcss className="hover:text-sky-400 hover:scale-120 hover:rotate-6 hover:-translate-y-1 transition-all duration-300 cursor-pointer" />
+                                <SiHeroui className="hover:text-indigo-400 hover:scale-120 hover:rotate-6 hover:-translate-y-1 transition-all duration-300 cursor-pointer" />
 
                             </div>
                         </div>
@@ -141,34 +159,50 @@ const Hero = () => {
 
                             <div className="flex flex-wrap gap-5 text-3xl text-base-content/60">
 
-                                <FaNodeJs className="hover:text-green-500 transition" />
-                                <SiExpress className="hover:text-white transition" />
-                                <SiMongodb className="hover:text-green-400 transition" />
-                                <SiFirebase className="hover:text-yellow-500 transition" />
+                                <FaNodeJs className="hover:text-green-500 hover:scale-120 hover:rotate-6 hover:-translate-y-1 transition-all duration-300 cursor-pointer" />
+                                <SiExpress className="hover:text-white hover:scale-120 hover:rotate-6 hover:-translate-y-1 transition-all duration-300 cursor-pointer" />
+                                <SiMongodb className="hover:text-green-400 hover:scale-120 hover:rotate-6 hover:-translate-y-1 transition-all duration-300 cursor-pointer" />
+                                <SiFirebase className="hover:text-yellow-500 hover:scale-120 hover:rotate-6 hover:-translate-y-1 transition-all duration-300 cursor-pointer" />
 
                             </div>
                         </div>
 
                     </div>
 
-                </div>
+                </motion.div>
 
                 {/* RIGHT SIDE IMAGE */}
-                <div className="flex justify-center md:justify-end">
+                <motion.div 
+                    initial={{ opacity: 0, x: 40 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    className="flex justify-center md:justify-end"
+                >
 
                     <div className="relative">
 
                         <div className="absolute -inset-4 bg-primary/20 blur-2xl rounded-full"></div>
 
-                        <Image
-                            src={HeroImage}
-                            alt="hero image"
-                            className="relative z-10 w-[280px] sm:w-[350px] md:w-[450px] lg:w-[520px] object-contain rounded-2xl shadow-2xl"
-                        />
+                        <motion.div
+                            animate={{
+                                y: [0, -12, 0],
+                            }}
+                            transition={{
+                                duration: 5,
+                                repeat: Infinity,
+                                ease: "easeInOut",
+                            }}
+                        >
+                            <Image
+                                src={HeroImage}
+                                alt="hero image"
+                                className="relative z-10 w-[280px] sm:w-[350px] md:w-[450px] lg:w-[520px] object-contain rounded-2xl shadow-2xl"
+                            />
+                        </motion.div>
 
                     </div>
 
-                </div>
+                </motion.div>
 
             </div>
         </section>
